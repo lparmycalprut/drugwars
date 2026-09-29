@@ -1,0 +1,14 @@
+{
+  "name": "Blueprint Wars",
+  "short_name": "BPWars",
+  "description": "Fictional syndicate strategy: build your block, raid rivals, rule the districts.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0e13",
+  "theme_color": "#0b0e13",
+  "icons": [
+    { "src": "/img/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/img/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

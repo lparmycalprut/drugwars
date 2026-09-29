@@ -1,0 +1,24 @@
+{
+  "name": "drugwars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lparmycalprut/drugwars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lparmycalprut/drugwars/issues"
+  },
+  "homepage": "https://github.com/lparmycalprut/drugwars#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "type": "module"
+}
