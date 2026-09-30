@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tidemark Isles — First Tide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><div><strong>TIDEMARK ISLES</strong><small>FIRST TIDE · PROTOTYPE</small></div></div>
+      <div class="top-actions"><span class="save-state" id="saveState">● Ready</span><button class="tiny-button" id="resetButton">Reset journey</button></div>
+    </header>
+
+    <section class="game-layout">
+      <div class="game-column">
+        <div class="canvas-frame">
+          <canvas id="gameCanvas" width="768" height="480" aria-label="Dunia game Tidemark Isles"></canvas>
+          <div class="key-hint"><kbd>WASD</kbd> / <kbd>ARROW KEYS</kbd> move <span>·</span> walk through tall grass to discover Rillkin</div>
+        </div>
+        <div class="story-card" id="storyCard">
+          <span class="chapter-label">DAY 01 · GLASSREED MARSH</span>
+          <h1>A small tide is waiting.</h1>
+          <p>Walk toward the reeds. Something gentle is watching from the shallows.</p>
+        </div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="trainer-card">
+          <div class="avatar">W</div><div><span class="eyebrow">WAYFARER</span><h2 id="trainerName">Mara</h2><p id="locationLabel">Glassreed Marsh</p></div>
+          <div class="tide-status"><span class="status-dot"></span><span>Tide <b id="tideClock">06:40</b></span></div>
+        </div>
+        <section class="panel-section"><div class="section-title"><span>YOUR PARTY</span><span class="count" id="partyCount">1 / 6</span></div><div id="partyList" class="party-list"></div></section>
+        <section class="panel-section journal"><div class="section-title"><span>FIELD NOTES</span><span class="note-icon">✎</span></div><p id="journalText">Find a Rillkin in the tall grass and begin your first bond.</p><div class="progress-track"><span id="progressBar"></span></div><small id="progressLabel">0 of 3 discoveries</small></section>
+        <section class="panel-section controls"><div class="section-title"><span>HOW TO PLAY</span></div><p><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Explore</p><p><span class="control-swatch grass"></span> Tall grass · encounters</p><p><span class="control-swatch water"></span> Shallow water · blocked</p></section>
+      </aside>
+    </section>
+    <footer><span>Original creature adventure · No wallets, no countdowns, just curious paths.</span><span>v0.1.0</span></footer>
+  </main>
+
+  <div class="modal-backdrop hidden" id="battleModal" role="dialog" aria-modal="true" aria-labelledby="battleTitle">
+    <div class="battle-modal">
+      <div class="battle-header"><span class="eyebrow">WILD ENCOUNTER · GLASSREED MARSH</span><button class="close-button" id="fleeButton" aria-label="Flee">×</button></div>
+      <div class="battle-arena">
+        <div class="enemy-side"><div class="creature-name"><b id="enemyName">Pipplet</b><span id="enemyLevel">Lv. 2</span></div><div class="health"><span id="enemyHealthBar"></span></div><div class="health-label"><span>VIGOR</span><span id="enemyHp">24 / 24</span></div><div class="creature-art" id="enemyArt"></div></div>
+        <div class="encounter-spark">✦</div>
+        <div class="player-side"><div class="creature-art player-art" id="playerArt"></div><div class="creature-name"><b id="playerName">Brumlet</b><span id="playerLevel">Lv. 4</span></div><div class="health"><span id="playerHealthBar"></span></div><div class="health-label"><span>VIGOR</span><span id="playerHp">36 / 36</span></div></div>
+      </div>
+      <div class="battle-log" id="battleLog">A wild Rillkin emerged from the reeds.</div>
+      <div class="battle-actions"><button class="action-button primary" id="listenButton"><span>◒</span> Listen</button><button class="action-button" id="offerButton"><span>✦</span> Offer reed <small>1</small></button><button class="action-button" id="fleeAction"><span>↗</span> Step back</button></div>
+      <div class="battle-result hidden" id="battleResult"><strong id="resultTitle">A new bond begins.</strong><p id="resultText"></p><button class="action-button primary" id="continueButton">Continue exploring</button></div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
